@@ -47,6 +47,7 @@ $halfOpacityWhite: rgba(255,255,255,.5);
 }
 
 input:focus { outline: none; }
+.placeholder { font-weight: 100; }
 a { 
 	color: $brandGreen; 
 	&:hover {
@@ -192,6 +193,7 @@ $navGrey: #252528;
 	section { 
 		position: relative;
 		float: right; 
+		padding-right: 35px;
 		input[type='text'] {
 			@include cornerRadius(); 
 			@include inputFormatting(white);
@@ -204,7 +206,21 @@ $navGrey: #252528;
 			padding-left: 10px;
 			font-size: 1.2em;
 		}
-		#profileImg { 
+		#profileImgDiv {
+			position: absolute;
+			right: 0;
+			top: 0;
+			@include cornerRadius();
+			width: 30px;
+			height: 30px;
+			overflow: hidden;
+			img { 
+				width: 100%;
+				margin-bottom: 0;
+			}	
+		}
+
+		/*#profileImg { 
 			@include cornerRadius(); 
 			position: relative; 
 			top: -2px;
@@ -219,12 +235,12 @@ $navGrey: #252528;
     		&:after {
 			    content: url(../images/arrow-icon.png);
     		}
-		}
+		}*/
 		#dropdown {
 			display: none;
 			position: absolute;
 			top: 28px;
-			right: 0;
+			right: -13px;
 			z-index: 2;
 			ul {
 				margin-top: 10px;
@@ -555,12 +571,16 @@ $navGrey: #252528;
 		padding-bottom: 30px;
 		.headshot {
 			padding: 0 20px 20px 0; 
-			img {
+			#headshotDiv {
 				@include cornerRadius();
 				width: 85px;
 				height: 85px;
 				margin-bottom: 15px;
-				object-fit: cover;
+				overflow: hidden;
+				img { 
+					width: 100%;
+					margin-bottom: 0;
+				}	
 			}
 			a {
 				@include cornerRadius();
@@ -684,14 +704,19 @@ $navGrey: #252528;
 	#profile {
 		color: white; 
 		height: auto !important;
-		img { 
+		#headshotDiv {
 			@include cornerRadius();
 			width: 85px;
 			height: 85px;
+			margin: 0 auto;
 			margin-bottom: 15px;
-			object-fit: cover;
-			margin-bottom: 0;
+			overflow: hidden;
+			img { 
+				width: 100%;
+				margin-bottom: 0;
+			}	
 		}
+		
 		h2 {
 			font-weight: 200;
 			margin: 15px 0;
@@ -741,7 +766,7 @@ $navGrey: #252528;
 		}
 	}
 }
-#posts {
+.posts {
 	.post {
 		.liked {
 			span {
@@ -754,7 +779,7 @@ $navGrey: #252528;
 		}
 	}
 }
-#followers, #following {
+.followers, .following {
 	display: none;
 	padding-top: 10px;
 	.person {

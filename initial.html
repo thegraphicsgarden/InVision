@@ -10,9 +10,9 @@
 		<link rel="stylesheet" href="./stylesheets/style.css">
 		
 		<!--JS-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js" ></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="./js/initial.js"></script>
+		<script src="./js/jquery-1.11.3.min.js"></script>
+		<script src="./js/jquery.placeholder.min.js"></script>
+		<script src="./js/initial.js"></script>
 	</head>
 	<body class="">
 		<div id="modalBkg"></div>
@@ -33,7 +33,9 @@
 				<section>
 					<a id="chat"><img src="./images/chat-icon.png" /></a>
 					<input type="text" />
-					<img id="profileImg" class="options" src="./images/headshot.png" />
+					<div id="profileImgDiv">
+						<img id="profileImg" class="options" src="./images/headshot.png" />
+					</div>
 					<div id="dropdown" class="options">
 						<div class="arrow-up"></div>
 						<ul>
@@ -67,6 +69,18 @@
 				</section>
 			</div>
 		</section>
+
+		<script src="./js/jquery.placeholder.min.js"></script>
+		<script>
+			// To test the @id toggling on password inputs in browsers that don’t support changing an input’s @type dynamically (e.g. Firefox 3.6 or IE), uncomment this:
+			// $.fn.hide = function() { return this; }
+			// Then uncomment the last rule in the <style> element (in the <head>).
+			$(function() {
+				// Invoke the plugin
+				$('input, textarea').placeholder();
+			});
+		</script>
+
 
 		<section id="posts" class="container" data-style="list">
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" data-col="0">

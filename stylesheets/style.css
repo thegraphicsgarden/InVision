@@ -14,6 +14,9 @@
 input:focus {
   outline: none; }
 
+.placeholder {
+  font-weight: 100; }
+
 a {
   color: #00cc99; }
   a:hover {
@@ -132,6 +135,23 @@ h1, h2, h3 {
   #navigation section {
     position: relative;
     float: right;
+    padding-right: 35px;
+    		/*#profileImg { 
+    			@include cornerRadius(); 
+    			position: relative; 
+    			top: -2px;
+    			display: inline-block; overflow: hidden;
+    			height: 30px; 
+    			width: 30px;
+        		object-fit: cover;
+        		&:hover {
+        			cursor: pointer;
+        		}
+    
+        		&:after {
+    			    content: url(../images/arrow-icon.png);
+        		}
+    		}*/
     /* /dropdown */ }
     #navigation section input[type='text'] {
       -moz-border-radius: 3px;
@@ -158,25 +178,23 @@ h1, h2, h3 {
       #navigation section input[type='text']:-ms-input-placeholder {
         color: white;
         font-weight: 100; }
-    #navigation section #profileImg {
+    #navigation section #profileImgDiv {
+      position: absolute;
+      right: 0;
+      top: 0;
       -moz-border-radius: 3px;
       border-radius: 3px;
-      position: relative;
-      top: -2px;
-      display: inline-block;
-      overflow: hidden;
-      height: 30px;
       width: 30px;
-      object-fit: cover; }
-      #navigation section #profileImg:hover {
-        cursor: pointer; }
-      #navigation section #profileImg:after {
-        content: url(../images/arrow-icon.png); }
+      height: 30px;
+      overflow: hidden; }
+      #navigation section #profileImgDiv img {
+        width: 100%;
+        margin-bottom: 0; }
     #navigation section #dropdown {
       display: none;
       position: absolute;
       top: 28px;
-      right: 0;
+      right: -13px;
       z-index: 2; }
       #navigation section #dropdown ul {
         margin-top: 10px;
@@ -464,13 +482,16 @@ h1, h2, h3 {
   padding-bottom: 30px; }
   #settings #account .headshot {
     padding: 0 20px 20px 0; }
-    #settings #account .headshot img {
+    #settings #account .headshot #headshotDiv {
       -moz-border-radius: 3px;
       border-radius: 3px;
       width: 85px;
       height: 85px;
       margin-bottom: 15px;
-      object-fit: cover; }
+      overflow: hidden; }
+      #settings #account .headshot #headshotDiv img {
+        width: 100%;
+        margin-bottom: 0; }
     #settings #account .headshot a {
       -moz-border-radius: 3px;
       border-radius: 3px;
@@ -568,14 +589,17 @@ h1, h2, h3 {
   #profileHero #profile {
     color: white;
     height: auto !important; }
-    #profileHero #profile img {
+    #profileHero #profile #headshotDiv {
       -moz-border-radius: 3px;
       border-radius: 3px;
       width: 85px;
       height: 85px;
+      margin: 0 auto;
       margin-bottom: 15px;
-      object-fit: cover;
-      margin-bottom: 0; }
+      overflow: hidden; }
+      #profileHero #profile #headshotDiv img {
+        width: 100%;
+        margin-bottom: 0; }
     #profileHero #profile h2 {
       font-weight: 200;
       margin: 15px 0; }
@@ -615,36 +639,36 @@ h1, h2, h3 {
             border-bottom: 3px solid #00cc99;
             opacity: 1; }
 
-#posts .post .liked span {
+.posts .post .liked span {
   color: #00cc99; }
-  #posts .post .liked span img {
+  .posts .post .liked span img {
     position: relative;
     margin-top: -4px; }
 
-#followers, #following {
+.followers, .following {
   display: none;
   padding-top: 10px; }
-  #followers .person, #following .person {
+  .followers .person, .following .person {
     padding: 20px 0 10px 0;
     border-bottom: 1px solid #dee1e5; }
-    #followers .person h6, #following .person h6 {
+    .followers .person h6, .following .person h6 {
       color: #70767f;
       font-size: 1.1em;
       margin-bottom: 5px; }
-    #followers .person span, #following .person span {
+    .followers .person span, .following .person span {
       font-size: .9em;
       color: #bec3cc;
       margin-right: 20px;
       font-weight: 200;
       white-space: nowrap; }
-    #followers .person:last-child, #following .person:last-child {
+    .followers .person:last-child, .following .person:last-child {
       margin-bottom: 100px; }
-    #followers .person img.pic, #followers .person img.checkbox, #followers .person img.plusbox, #following .person img.pic, #following .person img.checkbox, #following .person img.plusbox {
+    .followers .person img.pic, .followers .person img.checkbox, .followers .person img.plusbox, .following .person img.pic, .following .person img.checkbox, .following .person img.plusbox {
       position: relative;
       margin-top: 10px; }
-    #followers .person .info, #following .person .info {
+    .followers .person .info, .following .person .info {
       padding-left: 0; }
-      #followers .person .info img.pic, #following .person .info img.pic {
+      .followers .person .info img.pic, .following .person .info img.pic {
         -moz-border-radius: 3px;
         border-radius: 3px;
         float: left;
@@ -652,9 +676,9 @@ h1, h2, h3 {
         margin-bottom: 20px;
         width: 45px;
         height: 45px; }
-    #followers .person .checkMe, #following .person .checkMe {
+    .followers .person .checkMe, .following .person .checkMe {
       padding-right: 0; }
-      #followers .person .checkMe img, #following .person .checkMe img {
+      .followers .person .checkMe img, .following .person .checkMe img {
         float: right; }
 
 footer {
