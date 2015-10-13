@@ -4,7 +4,7 @@
 
 ## Overview
 
-**Jason Bryant** application submission *web developers*.
+**Jason Bryant** application submission.
 
 ### Submitted
 Submitted 10/13/15
